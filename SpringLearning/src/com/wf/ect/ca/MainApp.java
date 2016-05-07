@@ -10,10 +10,10 @@ public class MainApp {
 		HelloWorld obj=(HelloWorld)context.getBean("helloWorld");
 		obj.getMessage();
 		obj.setMessage("Kshitindra");
-		System.out.println("Message is changed and the new message is:");
+		System.out.println("Message is changed and the new message is: "+obj.getMessage());
 		obj.getMessage();
 		HelloWorld obj2=(HelloWorld)context.getBean("helloWorld");
-		System.out.println("Message in the second bean");
+		System.out.println("Message in the second bean "+obj2.getMessage());
 		obj2.getMessage();
 	}
 	
