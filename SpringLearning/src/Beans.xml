@@ -5,8 +5,31 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id="helloWorld" scope="prototype"  class="com.wf.ect.ca.HelloWorld" init-method="init" destroy-method="destroy">
+   <bean id="helloWorld"   class="com.wf.ect.ca.HelloWorld" init-method="init" destroy-method="destroy">
        <property name="message" value="Hello World!"/>
    </bean>
 
+ <bean id="textEditorBean"   class="com.wf.ect.ca.TextEditor" >
+       <property name="spellChecker" >
+       <ref bean="spellCheckerBean"/>
+       </property>
+ </bean>
+<bean id="spellCheckerBean"   class="com.wf.ect.ca.SpellChecker" >
+       </bean>
+       
+<bean id="setterInjection" class="com.wf.ect.ca.SetterInjection">
+<property name="var1" value="Hello" />
+<property name="var2" value="2" />
+</bean>       
+
+<bean id="constructorInjection" class="com.wf.ect.ca.ConstructorInjection">
+<constructor-arg value="kjain"> </constructor-arg>
+<constructor-arg value="23"></constructor-arg>
+
+
+</bean>  
+             
+       
 </beans>
+
+
